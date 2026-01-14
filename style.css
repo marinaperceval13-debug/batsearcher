@@ -49,3 +49,29 @@ footer {
   text-align: center;
   color: #aaa;
 }
+
+/* === EFECTO DE BRILLO DORADO EN TEXTO AL PASAR EL RATÓN === */
+h1:hover,
+h2:hover,
+nav a:hover {
+  background: linear-gradient(90deg, #facc15, #fff8dc, #facc15);
+  background-size: 200% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: brilloDorado 2s linear infinite;
+  text-shadow: 0 0 15px rgba(255, 230, 120, 0.7), 0 0 25px rgba(255, 215, 0, 0.6);
+  transform: scale(1.02);
+  transition: all 0.4s ease-in-out;
+}
+
+/* Animación del brillo en movimiento */
+@keyframes brilloDorado {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
