@@ -8,8 +8,16 @@ body {
     url('batsearcher-portada.png') center/cover no-repeat fixed;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+  background-color: #000;
+}
+
 .portada {
-  background: url('batsearcher-portada.png') center/cover no-repeat;
+  background: url('assets/batsearcher-portada.png') center/cover no-repeat;
   height: 100vh;
   display: flex;
   flex-direction: column;
