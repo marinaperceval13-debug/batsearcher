@@ -4,37 +4,45 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Batsearcher Thesis</title>
-
-  <!-- ✅ Enlace CORRECTO al CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <header class="portada">
-    <h1>Estudio de los sesgos en las estimaciones<br>de mortalidad de aves y murciélagos</h1>
-    <p class="sub">BATSEARCHER — UNIVERSIDAD BIRD IMPACT</p>
-  </header>
+  <!-- 🔒 Pantalla de login -->
+  <div id="login-screen">
+    <h1>Acceso restringido</h1>
+    <input type="password" id="password-input" placeholder="Introduce la contraseña" />
+    <button id="login-btn">Entrar</button>
+  </div>
 
-  <nav>
-    <ul>
-      <li><a href="#" class="active" data-page="resumen.html">Resumen</a></li>
-      <li><a href="#" data-page="objetivos.html">Objetivos</a></li>
-      <li><a href="#" data-page="metodos.html">Metodología</a></li>
-      <li><a href="#" data-page="resultados.html">Resultados</a></li>
-      <li><a href="#" data-page="bibliografia.html">Bibliografía</a></li>
-      <li><a href="#" data-page="contacto.html">Contacto</a></li>
-    </ul>
-  </nav>
+  <!-- 🌄 Aplicación principal (oculta hasta iniciar sesión) -->
+  <div id="app" style="display: none;">
+    <header class="portada">
+      <h1>Estudio de los sesgos en las estimaciones<br>de mortalidad de aves y murciélagos</h1>
+      <p class="sub">BATSEARCHER — UNIVERSIDAD BIRD IMPACT</p>
+    </header>
 
-  <main id="contenido">
-    <p class="cargando">Cargando contenido...</p>
-  </main>
+    <nav>
+      <ul>
+        <li><a href="#" class="active" data-page="resumen.html">Resumen</a></li>
+        <li><a href="#" data-page="objetivos.html">Objetivos</a></li>
+        <li><a href="#" data-page="metodos.html">Metodología</a></li>
+        <li><a href="#" data-page="resultados.html">Resultados</a></li>
+        <li><a href="#" data-page="bibliografia.html">Bibliografía</a></li>
+        <li><a href="#" data-page="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
 
-  <footer>
-    <p>&copy; 2026 Batsearcher Thesis</p>
-  </footer>
+    <main id="contenido">
+      <p class="cargando">Cargando contenido...</p>
+    </main>
 
-  <!-- ✅ Enlace CORRECTO al script -->
+    <footer>
+      <p>&copy; 2026 Batsearcher Thesis</p>
+    </footer>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
+
