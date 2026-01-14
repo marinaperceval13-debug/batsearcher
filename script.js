@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   // === SISTEMA DE CONTRASEÑA ===
-  const PASSWORD_HASH = "abb634e86d43122098486bcea800a3da"; // 🔐 Hash de 'bat2026'
+   const PASSWORD_HASH = "abb634e86d43122098486bcea800a3da"; // hash de 'bat2026'
+
 
   let pass = prompt("Introduce la contraseña para acceder:");
 
