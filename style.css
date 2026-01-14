@@ -1,19 +1,12 @@
-body {
-  margin: 0;
-  padding: 0;
-  color: #fff;
-  font-family: 'Playfair Display', serif;
-  background: 
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.85)),
-    url('batsearcher-portada.png') center/cover no-repeat fixed;
-}
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Playfair Display', serif;
   color: #fff;
-  background-color: #000;
+  font-family: 'Playfair Display', serif;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.85)),
+    url('assets/batsearcher-portada.png') center/cover no-repeat fixed;
 }
 
 .portada {
@@ -56,14 +49,4 @@ footer {
   padding: 1rem;
   text-align: center;
   color: #aaa;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  color: #fff;
-  font-family: 'Playfair Display', serif;
-  background: 
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.85)),
-    url('batsearcher-portada.png') center/cover no-repeat fixed;
 }
