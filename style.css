@@ -1,52 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Batsearcher Thesis</title>
 
-body {
-  margin: 0;
-  padding: 0;
-  color: #fff;
-  font-family: 'Playfair Display', serif;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.85)),
-    url('assets/batsearcher-portada.png') center/cover no-repeat fixed;
-}
+  <!-- ✅ Enlace CORRECTO al CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-.portada {
-  background: url('assets/batsearcher-portada.png') center/cover no-repeat;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+<body>
+  <header class="portada">
+    <h1>Estudio de los sesgos en las estimaciones<br>de mortalidad de aves y murciélagos</h1>
+    <p class="sub">BATSEARCHER — UNIVERSIDAD BIRD IMPACT</p>
+  </header>
 
-nav {
-  background: #000;
-  text-align: center;
-  padding: 1rem;
-}
+  <nav>
+    <ul>
+      <li><a href="#" class="active" data-page="resumen.html">Resumen</a></li>
+      <li><a href="#" data-page="objetivos.html">Objetivos</a></li>
+      <li><a href="#" data-page="metodos.html">Metodología</a></li>
+      <li><a href="#" data-page="resultados.html">Resultados</a></li>
+      <li><a href="#" data-page="bibliografia.html">Bibliografía</a></li>
+      <li><a href="#" data-page="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
 
-nav a {
-  color: #f5e6b3;
-  text-decoration: none;
-  padding: 0.7rem 1.2rem;
-}
+  <main id="contenido">
+    <p class="cargando">Cargando contenido...</p>
+  </main>
 
-nav a.active,
-nav a:hover {
-  background: #facc15;
-  color: #111;
-}
+  <footer>
+    <p>&copy; 2026 Batsearcher Thesis</p>
+  </footer>
 
-main {
-  min-height: 70vh;
-  background: #111;
-  padding: 2rem;
-  text-align: center;
-}
-
-footer {
-  background: #000;
-  padding: 1rem;
-  text-align: center;
-  color: #aaa;
-}
+  <!-- ✅ Enlace CORRECTO al script -->
+  <script src="script.js"></script>
+</body>
+</html>
