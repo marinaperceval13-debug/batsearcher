@@ -75,3 +75,49 @@ nav a:hover {
     background-position: 200% 50%;
   }
 }
+/* === MENÚ DESPLEGABLE === */
+.menu-desplegable {
+  position: relative;
+}
+
+.menu-desplegable .submenu {
+  display: none;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.9);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  min-width: 180px;
+  border: 1px solid #facc15;
+  border-radius: 8px;
+  z-index: 20;
+}
+
+.menu-desplegable:hover .submenu {
+  display: block;
+}
+
+.submenu li a {
+  display: block;
+  padding: 0.8rem 1rem;
+  text-decoration: none;
+  color: #f5e6b3;
+}
+
+.submenu li a:hover {
+  background: #facc15;
+  color: #111;
+}
+
+/* === Hacer que el título sea clicable === */
+#titulo-inicio {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+#titulo-inicio:hover {
+  color: #facc15;
+  text-shadow: 0 0 20px rgba(255, 230, 150, 0.7);
+  cursor: pointer;
+}
