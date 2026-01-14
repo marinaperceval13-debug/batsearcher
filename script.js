@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const PASSWORD_HASH = "abb634e86d43122098486bcea800a3da"; // MD5 de 'bat2026'
+ const PASSWORD_HASH = "c88b14ab963d353af7cf3dd460e7165e"; // MD5 de 'aves2026'
   const loginScreen = document.getElementById("login-screen");
   const app = document.getElementById("app");
   const loginBtn = document.getElementById("login-btn");
