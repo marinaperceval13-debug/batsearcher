@@ -5,31 +5,135 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Batsearcher Thesis</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* === BLOQUEO DE CONTRASEÑA === */
+    #lock-screen {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at center, #0a0a0a 40%, #000 100%);
+      color: #facc15;
+      font-family: 'Playfair Display', serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      z-index: 9999;
+      transition: opacity 0.4s ease-in-out;
+    }
+
+    #lock-screen.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    #lock-screen h1 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    #lock-screen input {
+      padding: 0.7rem 1rem;
+      border-radius: 6px;
+      border: none;
+      font-size: 1rem;
+      outline: none;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    #lock-screen button {
+      background: #facc15;
+      border: none;
+      color: #111;
+      font-weight: 600;
+      padding: 0.7rem 1.5rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #lock-screen button:hover {
+      background: #ffe46b;
+    }
+
+    #error-msg {
+      color: #ff6b6b;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      height: 1rem;
+    }
+  </style>
 </head>
+
 <body>
-  <header class="portada">
-    <h1>Estudio de los sesgos en las estimaciones<br>de mortalidad de aves y murciélagos</h1>
-    <p class="sub">BATSEARCHER — UNIVERSIDAD BIRD IMPACT</p>
-  </header>
+  <!-- 🔒 BLOQUEO DE ENTRADA -->
+  <div id="lock-screen">
+    <h1>Acceso restringido</h1>
+    <input type="password" id="password" placeholder="Introduce la contraseña" />
+    <button id="enter-btn">Entrar</button>
+    <p id="error-msg"></p>
+  </div>
 
-  <nav>
-    <ul>
-      <li><a href="#" class="active" data-page="resumen.html">Resumen</a></li>
-      <li><a href="#" data-page="objetivos.html">Objetivos</a></li>
-      <li><a href="#" data-page="metodologia.html">Metodología</a></li>
-      <li><a href="#" data-page="resultados.html">Resultados</a></li>
-      <li><a href="#" data-page="bibliografia.html">Bibliografía</a></li>
-      <li><a href="#" data-page="contacto.html">Contacto</a></li>
-    </ul>
-  </nav>
+  <!-- 🔰 CONTENIDO PRINCIPAL -->
+  <div id="main-content" style="display:none;">
+    <header class="portada">
+      <h1>Estudio de los sesgos en las estimaciones<br>de mortalidad de aves y murciélagos</h1>
+      <p class="sub">BATSEARCHER — UNIVERSIDAD BIRD IMPACT</p>
+    </header>
 
-  <main id="contenido">
-    <p class="cargando">Cargando contenido...</p>
-  </main>
+    <nav>
+      <ul>
+        <li><a href="#" class="active" data-page="resumen.html">Resumen</a></li>
+        <li><a href="#" data-page="objetivos.html">Objetivos</a></li>
+        <li><a href="#" data-page="metodologia.html">Metodología</a></li>
+        <li><a href="#" data-page="resultados.html">Resultados</a></li>
+        <li><a href="#" data-page="bibliografia.html">Bibliografía</a></li>
+        <li><a href="#" data-page="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
 
-  <footer>
-    <p>&copy; 2026 Batsearcher Thesis</p>
-  </footer>
+    <main id="contenido">
+      <p class="cargando">Cargando contenido...</p>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Batsearcher Thesis</p>
+    </footer>
+  </div>
+
+  <script>
+    // =======================
+    // 🔒 CONTROL DE CONTRASEÑA
+    // =======================
+
+    const PASSWORD_HASH = "5f4dcc3b5aa765d61d8327deb882cf99"; // md5("password") -> cambia abajo
+
+    function md5(str) {
+      return CryptoJS.MD5(str).toString();
+    }
+
+    document.getElementById("enter-btn").addEventListener("click", () => {
+      const input = document.getElementById("password").value.trim();
+      const errorMsg = document.getElementById("error-msg");
+
+      if (md5(input) === PASSWORD_HASH) {
+        // ✅ Contraseña correcta
+        document.getElementById("lock-screen").classList.add("hidden");
+        setTimeout(() => {
+          document.getElementById("lock-screen").remove();
+          document.getElementById("main-content").style.display = "block";
+        }, 400);
+      } else {
+        // ❌ Incorrecta
+        errorMsg.textContent = "Contraseña incorrecta";
+        setTimeout(() => (errorMsg.textContent = ""), 2000);
+      }
+    });
+  </script>
+
+  <!-- Librería para hash MD5 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 
   <script src="script.js"></script>
 </body>
