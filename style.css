@@ -1,3 +1,11 @@
+  <!-- 🔒 Pantalla de login -->
+  <div id="login-screen">
+    <h1>Acceso restringido</h1>
+    <input type="password" id="password-input" placeholder="Introduce la contraseña" />
+    <button id="login-btn">Entrar</button>
+  </div>
+
+
 /* === ESTILO GENERAL === */
 body {
   margin: 0;
